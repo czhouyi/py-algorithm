@@ -39,5 +39,5 @@ def get_mode(num_list):
 def get_gcd(a, b):
     """求两数的最大公约数
     """
-    # todo
+    # todo 求两数的最大公约数
     return a
