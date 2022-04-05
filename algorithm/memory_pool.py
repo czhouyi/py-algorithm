@@ -1,14 +1,17 @@
+"""
+实现内存池，支持申请内存和释放内存操作
+"""
 HEAD_ADDRESS = 0
-TAIL_ADDRESS = 100
 
 
 class MemoryPool:
-    def __init__(self):
+    def __init__(self, pool_size):
         self.memory_address = {}
+        self.tail_address = pool_size
 
     def request(self, size):
         head = HEAD_ADDRESS
-        if size < 0 or size > TAIL_ADDRESS:
+        if size < 0 or size > self.tail_address:
             return 'error'
         if not self.memory_address:
             self.memory_address[HEAD_ADDRESS] = size
@@ -19,7 +22,7 @@ class MemoryPool:
                     self.memory_address[head] = head + size
                 else:
                     head = self.memory_address[start]
-            if TAIL_ADDRESS - head >= size:
+            if self.tail_address - head >= size:
                 self.memory_address[head] = head + size
             else:
                 return 'error'
@@ -33,7 +36,7 @@ class MemoryPool:
 
 
 if __name__ == '__main__':
-    memory_pool = MemoryPool()
+    memory_pool = MemoryPool(100)
     while True:
         command = input(">")
         if command.startswith('REQUEST'):
