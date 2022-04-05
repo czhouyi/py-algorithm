@@ -38,6 +38,15 @@ class AlgebraTestCase(unittest.TestCase):
     def test_get_gcd3(self):
         self.assertEqual(get_gcd(16, 24), 8)
 
+    def test_is_prime(self):
+        self.assertEqual(is_prime(17), True)
+        self.assertEqual(is_prime(51), False)
+
+    def test_is_leap_year(self):
+        self.assertEqual(is_leap_year(2022), False)
+        self.assertEqual(is_leap_year(1992), True)
+        self.assertEqual(is_leap_year(2004), True)
+
 
 if __name__ == '__main__':
     unittest.main()

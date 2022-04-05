@@ -41,3 +41,19 @@ def get_gcd(a, b):
     """
     # todo 求两数的最大公约数
     return a
+
+
+def is_prime(a):
+    """判断是否质数
+    """
+    # todo 判断是否质数
+    return True
+
+
+def is_leap_year(year):
+    """判断是否闰年
+
+    能被400整除，或者能被4整除但不能被100整除的都是闰年
+    """
+    # todo 判断是否闰年
+    return True
