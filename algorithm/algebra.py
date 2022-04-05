@@ -34,3 +34,10 @@ def get_mode(num_list):
         if v == max_count:
             mode_list.append(k)
     return mode_list
+
+
+def get_gcd(a, b):
+    """求两数的最大公约数
+    """
+    # todo
+    return a
